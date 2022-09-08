@@ -7,8 +7,6 @@ for(let i = studentNumbers.length; i > 0; i--){
    studentNumbers[i - 1] = studentNumbers[randomNum]; 
    studentNumbers[randomNum] = tmp;
  }
-  
- console.log(studentNumbers);
 
 studentNumbers.forEach(function(num){
   insertHTML += '<div class="seat__item">' + num + '</div>';
