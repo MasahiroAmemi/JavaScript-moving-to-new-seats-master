@@ -10,5 +10,5 @@ for(let i = 1; i <= 18; i++){
  const classMember = ["こすげ", "さとう", "たなか"];
  console.log(classMember[0]);
 
- const randomNum = Math.random();
+ const randomNum = Math.ceil(Math.randam()*10);
  console.log(randomNum);
