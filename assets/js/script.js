@@ -4,7 +4,6 @@ let insertHTML = '';
 for(let i = 1; i <= 18; i++){
   studentNumbers.forEach(function(num){
     insertHTML += '<div class="seat__item">' + num + '</div>';
-    console.log(num);
   })
  document.querySelector('#seat').innerHTML = insertHTML;
 
