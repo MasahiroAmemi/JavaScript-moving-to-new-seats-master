@@ -4,8 +4,8 @@ const shuffleArray = function() {
 
 for(let i = studentNumbers.length; i > 0; i--){
    const randomNum = Math.floor(Math.random() * i);
-   let tmp = studentNumbers[i - 1]; 
-   studentNumbers[i - 1] = studentNumbers[randomNum]; 
+   let tmp = studentNumbers[i - 1];
+   studentNumbers[i - 1] = studentNumbers[randomNum];
    studentNumbers[randomNum] = tmp;
  }
 }
@@ -16,6 +16,12 @@ studentNumbers.forEach(function(num){
   insertHTML += '<div class="seat__item">' + num + '</div>';
 })
 document.querySelector('#seat').innerHTML = insertHTML;
+}
+
+const soundPlay = function(){
+  const audioElement = new Audio();
+  audioElement.src = 'assets/audio/drum.mp3';
+  audioElement.play();
 }
 
 const timer = setInterval(function( {
