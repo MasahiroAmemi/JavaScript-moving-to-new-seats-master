@@ -29,3 +29,6 @@ const timer = setInterval(function( {
   showSeatBoxes();
   clearlnterval(timer);
 },50);
+
+soundPlay();
+
