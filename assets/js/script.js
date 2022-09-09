@@ -18,7 +18,8 @@ studentNumbers.forEach(function(num){
 document.querySelector('#seat').innerHTML = insertHTML;
 }
 
-setInterval(function() {
+const timer = setInterval(function( {
   shuffleArray();
   showSeatBoxes();
+  clearlnterval(timer);
 },50);
