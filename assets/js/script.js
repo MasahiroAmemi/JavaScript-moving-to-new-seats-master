@@ -18,5 +18,7 @@ studentNumbers.forEach(function(num){
 document.querySelector('#seat').innerHTML = insertHTML;
 }
 
-shuffleArray(); //配列の中身をシャッフルすることを目的としている関数
-showSeatBoxes(); //配列形式のデータを使って画面上に席番号ボックスを表示
+setInterval(function() {
+  shuffleArray();
+  showSeatBoxes();
+},50);
