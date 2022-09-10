@@ -28,7 +28,6 @@ const soundPlay = function(){
   })
 }
 
-/*
 document.querySelector('#btn-start').addEventListener('click', function(){
 timer = setInterval(function() {
   shuffleArray();
@@ -37,5 +36,3 @@ timer = setInterval(function() {
 
 soundPlay();
 });
-
-/*
