@@ -29,6 +29,7 @@ const soundPlay = function(){
 }
 
 document.querySelector('#btn-start').addEventListener('click', function(){
+  const studentNumber = document.querySelector("#studentNumber").value;
   document.querySelector('.c-overlay').classList.add("is-closed");
  
   timer = setInterval(function() {
