@@ -53,8 +53,9 @@ const soundPlay = function(){
 document.querySelector('#btn-start').addEventListener('click', function(){
   const studentNumber = document.querySelector("#studentNumber").value;
   const studentUpperlimit = 50;
+  const studentNumberIsEmpty = studentNumber === "";
   
-  if(studentNumber === "" ){
+  if(studentNumberlsEmpty){
     alert('人数が未入力です！入力してからスタートボタンを押してください。');
     return false;
   }
