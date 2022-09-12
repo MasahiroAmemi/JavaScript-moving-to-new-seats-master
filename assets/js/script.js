@@ -5,6 +5,7 @@ const setTargetStudents = function(studentNumber){
   　for(let i = 1; i <= studentNumber;i++){
      studentNumberList.push(i);
    }
+   const absenteeNumbers = document.querySelector("#absence").value;
   }
  
 const shuffleArray = function() {
