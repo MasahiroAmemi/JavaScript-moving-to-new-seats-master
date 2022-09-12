@@ -8,6 +8,7 @@ const setTargetStudents = function(studentNumber){
    const absenteeNumbers = document.querySelector("#absence").value;
    const splitedAbsenteeNumbers = absenteeNumbers.split(",");
     console.log(splitedAbsenteeNumbers); // データ確認用のために数字を入れています！
+    console.log(studentNumberList); // データ確認用のために数字を入れています！
   }
  
 const shuffleArray = function() {
