@@ -52,13 +52,15 @@ const soundPlay = function(){
 
 document.querySelector('#btn-start').addEventListener('click', function(){
   const studentNumber = document.querySelector("#studentNumber").value;
+  const studentUpperlimit = 50;
+  
   if(studentNumber === "" ){
     alert('人数が未入力です！入力してからスタートボタンを押してください。');
     return false;
   }
 
-  if(studentNumber > 50){
-    alert('人数は50人以内に設定してください！');
+  if(studentNumber > studentUpperlimit){
+    alert('人数は${studentUpperlimit}人以内に設定してください!');
     return false;
   }
 
