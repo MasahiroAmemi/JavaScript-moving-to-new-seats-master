@@ -36,7 +36,7 @@ const shuffleArray = function(){
 const showSeatBoxes = function() {
   let insertHTML = '';
   studentNumberList.forEach(function(num){
-  insertHTML += '<div class="seat__item">' + num + '</div>';
+  insertHTML += `<div class="seat__item">${num}</div>`;
 })
 document.querySelector('#seat').innerHTML = insertHTML;
 }
