@@ -1,14 +1,18 @@
 let timer;
-const studentNumberList = [];
+let studentNumberList = [];
 
 const setTargetStudents = function(studentNumber){
   　for(let i = 1; i <= studentNumber;i++){
      studentNumberList.push(i);
    }
    const absenteeNumbers = document.querySelector("#absence").value;
-   const splitedAbsenteeNumbers = absenteeNumbers.split(",");
-    console.log(splitedAbsenteeNumbers); // データ確認用のために数字を入れています！
-    console.log(studentNumberList); // データ確認用のために数字を入れています！
+   const splitedAbsenteeNumbers = absenteeNumbers.split(",").map(function(item, index){
+    return parseInt(item);
+  });
+
+  studentNumberList = studentNumberList.filter(function(student){
+    return !splitedAbsenteeNumbers.includes(student);
+  })
   }
  
 const shuffleArray = function() {
