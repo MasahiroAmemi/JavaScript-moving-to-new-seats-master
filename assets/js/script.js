@@ -1,5 +1,3 @@
-let timer;
-
 const setTargetStudents = function(studentNumber){
   let studentNumberList = [];
   　for(let i = 1; i <= studentNumber;i++){
@@ -43,7 +41,7 @@ const showSeatBoxes = function(shuffleStudent) {
 document.querySelector('#seat').innerHTML = insertHTML;
 }
 
-const soundPlay = function(){
+const soundPlay = function(timer){
   const audioElement = new Audio();
   audioElement.src = 'assets/audio/drum.mp3';
   audioElement.play();
@@ -70,10 +68,10 @@ document.querySelector('#btn-start').addEventListener('click', function(){
   document.querySelector('.c-overlay').classList.add("is-closed");
 
   const studentNumberList = setTargetStudents(studentNumber);
-    timer = setInterval(function() {
+    const timer = setInterval(function() {
     const shuffleStudent = shuffleArray(studentNumberList);
     showSeatBoxes(shuffleStudent);
 },50);
 
-soundPlay();
+soundPlay(timer);
 });
