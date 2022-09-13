@@ -1,7 +1,7 @@
 let timer;
-let studentNumberList = [];
 
 const setTargetStudents = function(studentNumber){
+  let studentNumberList = [];
   　for(let i = 1; i <= studentNumber;i++){
      studentNumberList.push(i);
    }
@@ -13,6 +13,7 @@ const setTargetStudents = function(studentNumber){
   studentNumberList = studentNumberList.filter(function(student){
     return !splitedAbsenteeNumbers.includes(student);
   })
+  return studentNumberList;
   }
  
 const shuffleArray = function() {
@@ -24,18 +25,19 @@ for(let i = studentNumbers.length; i > 0; i--){
  }
 }
 
-const shuffleArray = function(){
+const shuffleArray = function(studentNumberList){
   for(let i = studentNumberList.length; i > 0; i--){
     const randomNum = Math.floor(Math.random() * i);
     let tmp = studentNumberList[i - 1];
     studentNumberList[i - 1] = studentNumberList[randomNum];
     studentNumberList[randomNum] = tmp;
   }
+  return studentNumberList;
 }
 
-const showSeatBoxes = function() {
+const showSeatBoxes = function(shuffleStudent) {
   let insertHTML = '';
-  studentNumberList.forEach(function(num){
+  shuffleStudent.forEach(function(num){
   insertHTML += `<div class="seat__item">${num}</div>`;
 })
 document.querySelector('#seat').innerHTML = insertHTML;
@@ -67,12 +69,10 @@ document.querySelector('#btn-start').addEventListener('click', function(){
 
   document.querySelector('.c-overlay').classList.add("is-closed");
 
-  setTargetStudents(studentNumber);
-
-
-  timer = setInterval(function() {
-  shuffleArray();
-  showSeatBoxes();
+  const studentNumberList = setTargetStudents(studentNumber);
+    timer = setInterval(function() {
+    const shuffleStudent = shuffleArray(studentNumberList);
+    showSeatBoxes(shuffleStudent);
 },50);
 
 soundPlay();
