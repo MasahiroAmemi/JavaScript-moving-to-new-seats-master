@@ -50,7 +50,8 @@ const soundPlay = function(timer){
   })
 }
 
-document.querySelector('#btn-start').addEventListener('click', function(){
+console.log(this);
+document.querySelector('#btn-start').addEventListener('click',()=> {
   console.log(this);
   const studentNumber = document.querySelector("#studentNumber").value;
   const studentUpperlimit = 50;
