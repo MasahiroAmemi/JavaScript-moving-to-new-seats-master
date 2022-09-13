@@ -1,4 +1,4 @@
-const setTargetStudents = function(studentNumber){
+const setTargetStudents = (studentNumber){
   let studentNumberList = [];
   　for(let i = 1; i <= studentNumber;i++){
      studentNumberList.push(i);
@@ -8,22 +8,14 @@ const setTargetStudents = function(studentNumber){
     return parseInt(item);
   });
 
-  studentNumberList = studentNumberList.filter(function(student){
+  studentNumberList = studentNumberList.filter((student)=> {
     return !splitedAbsenteeNumbers.includes(student);
   })
   return studentNumberList;
   }
  
-const shuffleArray = function() {
-for(let i = studentNumbers.length; i > 0; i--){
-   const randomNum = Math.floor(Math.random() * i);
-   let tmp = studentNumbers[i - 1];
-   studentNumbers[i - 1] = studentNumbers[randomNum];
-   studentNumbers[randomNum] = tmp;
- }
-}
 
-const shuffleArray = function(studentNumberList){
+const shuffleArray = (studentNumberList)=> {
   for(let i = studentNumberList.length; i > 0; i--){
     const randomNum = Math.floor(Math.random() * i);
     let tmp = studentNumberList[i - 1];
@@ -33,7 +25,7 @@ const shuffleArray = function(studentNumberList){
   return studentNumberList;
 }
 
-const showSeatBoxes = function(shuffleStudent) {
+const showSeatBoxes = (shuffleStudent)=> {
   let insertHTML = '';
   shuffleStudent.forEach(function(num){
   insertHTML += `<div class="seat__item">${num}</div>`;
@@ -41,7 +33,7 @@ const showSeatBoxes = function(shuffleStudent) {
 document.querySelector('#seat').innerHTML = insertHTML;
 }
 
-const soundPlay = function(timer){
+const soundPlay = (timer)=> {
   const audioElement = new Audio();
   audioElement.src = 'assets/audio/drum.mp3';
   audioElement.play();
@@ -50,9 +42,8 @@ const soundPlay = function(timer){
   })
 }
 
-console.log(this);
+
 document.querySelector('#btn-start').addEventListener('click',()=> {
-  console.log(this);
   const studentNumber = document.querySelector("#studentNumber").value;
   const studentUpperlimit = 50;
   const studentNumberIsEmpty = studentNumber === "";
@@ -70,7 +61,7 @@ document.querySelector('#btn-start').addEventListener('click',()=> {
   document.querySelector('.c-overlay').classList.add("is-closed");
 
   const studentNumberList = setTargetStudents(studentNumber);
-    const timer = setInterval(function() {
+    const timer = ((function()=> {
     const shuffleStudent = shuffleArray(studentNumberList);
     showSeatBoxes(shuffleStudent);
 },50);
